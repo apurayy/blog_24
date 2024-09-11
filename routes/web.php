@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -20,4 +21,5 @@ Route::get('/logout',[AuthController::class, 'logout'])->name('logout');
 
 Route::group(['middleware' => 'adminuser'], function() {
     Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
+    Route::get('/user/list', [UserController::class, 'user_list'])->name('user.list');
 });
