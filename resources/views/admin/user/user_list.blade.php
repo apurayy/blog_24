@@ -6,8 +6,13 @@
         <div class="card-body">
             <div class="card_details">
                 <h5 class="card-title">User List
-                    <a href="" style="float: right;" class="btn btn-primary">Add New</a>
+                    <a href="{{route('user.add')}}" style="float: right;" class="btn btn-primary">Add New</a>
                 </h5>
+
+                @if (session('success'))
+                    <h6 class="text-success">{{ session('success') }}</h6>
+                @endif
+
             </div>
 
             <!-- Table with stripped rows -->
@@ -29,11 +34,11 @@
                         <th scope="row">{{$value->id}}</th>
                         <td>{{$value->name}}</td>
                         <td>{{$value->email}}</td>
-                        <td>{{ !empty($value->status)? 'Verifyed' : 'No' }}</td>
+                        <td>{{ !empty($value->status)? 'Active' : 'Inactive' }}</td>
                         <td>{{ date('d-m-Y H:i A', strtotime($value->created_at )) }}</td>
                         <td>
-                            <a href="" class="btn btn-primary">Edit</a>
-                            <a href="" class="btn btn-danger">Delete</a>
+                            <a href="{{url('user/edit/'.$value->id)}}" class="btn btn-primary">Edit</a>
+                            <a onclick="return confirm('Are you sure you want to delete this user?');" href="{{url('user/delete/'.$value->id)}}" class="btn btn-danger">Delete</a>
                         </td>
                     </tr>
                     @endforeach

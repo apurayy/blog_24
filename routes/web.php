@@ -22,4 +22,9 @@ Route::get('/logout',[AuthController::class, 'logout'])->name('logout');
 Route::group(['middleware' => 'adminuser'], function() {
     Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
     Route::get('/user/list', [UserController::class, 'user_list'])->name('user.list');
+    Route::get('/user/add', [UserController::class, 'user_add'])->name('user.add');
+    Route::post('/user/insert', [UserController::class, 'user_insert'])->name('user.insert');
+    Route::get('/user/edit/{id}', [UserController::class, 'user_edit']);
+    Route::post('/user/update/{id}', [UserController::class, 'user_update'])->name('user_update');
+    Route::get('/user/delete/{id}', [UserController::class, 'user_delete'])->name('user_delete');
 });
