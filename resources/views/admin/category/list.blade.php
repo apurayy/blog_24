@@ -21,24 +21,22 @@
                     <tr>
                         <th scope="col">Id</th>
                         <th scope="col">Name</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">Status</th>
+                        <th scope="col">Description</th>
                         <th scope="col">Created Date</th>
                         <th scope="col">Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($getRecord as $value)
+                    @foreach ($catRecord as $item)
 
                     <tr>
-                        <th scope="row">{{$value->id}}</th>
-                        <td>{{$value->name}}</td>
-                        <td>{{$value->email}}</td>
-                        <td>{{ !empty($value->status)? 'Active' : 'Inactive' }}</td>
-                        <td>{{ date('d-m-Y H:i A', strtotime($value->created_at )) }}</td>
+                        <th scope="row">{{$item->id}}</th>
+                        <td>{{$item->name}}</td>
+                        <td>{{$item->description}}</td>
+                        <td>{{ date('d-m-Y H:i A', strtotime($item->created_at )) }}</td>
                         <td>
-                            <a href="{{url('user/edit/'.$value->id)}}" class="btn btn-primary">Edit</a>
-                            <a onclick="return confirm('Are you sure you want to delete this user?');" href="{{url('user/delete/'.$value->id)}}" class="btn btn-danger">Delete</a>
+                            <a href="" class="btn btn-primary">Edit</a>
+                            <a onclick="return confirm('Are you sure you want to delete this user?');" href="" class="btn btn-danger">Delete</a>
                         </td>
                     </tr>
                     @endforeach
@@ -47,7 +45,7 @@
             </table>
             <!-- End Table with stripped rows -->
 
-            {!! $users->withQueryString()->links('pagination::bootstrap-5') !!}
+            {!! $cat->withQueryString()->links('pagination::bootstrap-5') !!}
 
         </div>
     </div>

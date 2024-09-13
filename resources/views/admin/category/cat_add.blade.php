@@ -14,21 +14,8 @@
                 </div>
 
                 <div class="col-12">
-                    <label for="inputEmail4" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="inputEmail4" name="email" required>
-                </div>
-
-                <div class="col-12">
-                    <label for="inputPassword4" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="inputPassword4" name="password" required>
-                </div>
-
-                <div class="col-12">
-                    <label for="inputPassword4" class="form-label">Status</label>
-                    <select class="form-control" name="status">
-                        <option value="1">Active</option>
-                        <option value="0">Inactive</option>
-                    </select>
+                    <label for="inputEmail4" class="form-label">Description</label>
+                    <input type="text" class="form-control" name="description" required>
                 </div>
 
                 <div class="text-center">

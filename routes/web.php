@@ -33,7 +33,7 @@ Route::group(['middleware' => 'adminuser'], function() {
     Route::get('/category/list', [CategoryController::class, 'category_list'])->name('category.list');
     Route::get('/category/add', [CategoryController::class, 'category_add'])->name('category.add');
     Route::post('/category/insert', [CategoryController::class, 'category_insert'])->name('category.insert');
-    Route::get('/category/edit/{id}', [CategoryController::class, 'category_edit']);
-    Route::post('/category/update/{id}', [CategoryController::class, 'category_update'])->name('category_update');
-    Route::get('/category/delete/{id}', [CategoryController::class, 'category_delete'])->name('category_delete');
+    // Route::get('/category/edit/{id}', [CategoryController::class, 'category_edit']);
+    // Route::post('/category/update/{id}', [CategoryController::class, 'category_update'])->name('category_update');
+    // Route::get('/category/delete/{id}', [CategoryController::class, 'category_delete'])->name('category_delete');
 });
