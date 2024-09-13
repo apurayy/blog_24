@@ -38,7 +38,7 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="users-profile.html">
+        <a class="nav-link collapsed" href="{{ route('category.list') }}">
           <i class="bi bi-person"></i>
           <span>Category</span>
         </a>
